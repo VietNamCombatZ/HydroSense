@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
+    <link rel="stylesheet"
+      href="./basemap.css"
+    />
+    <!-- Load Calcite components from CDN -->
+    <script type="module" src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js"></script>
+
+    <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
+    <script src="https://js.arcgis.com/4.34/"></script>
+
+    <!-- Load Map components from CDN-->
+    <script type="module" src="https://js.arcgis.com/4.34/map-components/"></script>
+
+  </head>
+
+  <body>
+    <arcgis-map basemap="arcgis/navigation" center="108.18, 16.06" zoom="13">
+      <arcgis-zoom slot="top-left"></arcgis-zoom>
+      <arcgis-directions slot="top-right" use-default-route-layer></arcgis-directions>
+      <calcite-panel slot="top-right" heading="Directions">
+
+        <calcite-notice id="directions-notice" icon="driving-distance" open>
+          <div slot="message">Click on the map in two different locations to solve the route.</div>
+        </calcite-notice>
+
+        <div id="directions-container"></div>
+
+      </calcite-panel>
+      <div id="basemapStyles"  slot="top-right">
+          <calcite-label>
+            Basemap Style:
+            <calcite-combobox
+              id="styleCombobox"
+              selection-mode="single"
+              clear-disabled></calcite-combobox>
+          </calcite-label>
+        </div>
+
+    </arcgis-map>
+
+
+  </body>
+  <script type="module" src="./basemap.js"></script>
+  <script type="module" src="./routing.js"></script>
+
+</html>
