@@ -1,0 +1,10 @@
+{
+  "name": "arcgis-flood-routing-demo",
+  "private": true,
+  "scripts": {
+    "dev:all": "concurrently -k \"cd backend && uvicorn app:app --reload --port 8000\" \"cd frontend && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "9.1.2"
+  }
+}

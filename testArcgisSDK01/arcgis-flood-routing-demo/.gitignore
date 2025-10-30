@@ -1,0 +1,19 @@
+# Node
+node_modules/
+frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Backend persistence
+backend/floods.json
