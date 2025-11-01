@@ -9,14 +9,11 @@ const API_KEY = apiKeyMeta?.content;
 // Wait until the ArcGIS loader is available
 // $arcgis is injected globally by the ArcGIS JS CDN when using "map-components".
 const esriRequest = await $arcgis.import("@arcgis/core/request.js");
+const esriConfig = await $arcgis.import("@arcgis/core/config.js");
 
-// If an API key is present, set it for requests to basemap styles service
+// If an API key is present, set it globally so all services (including routing) can use it
 if (API_KEY) {
-  // Append a default header for esriRequest calls
-  const originalEsriRequest = esriRequest;
-  // Wrap to inject token header for the specific basemap styles endpoint
-  // Note: This keeps it simple without bringing in esriConfig.
-  // You can alternatively use esriConfig.apiKey from @arcgis/core/config if needed.
+  esriConfig.apiKey = API_KEY;
 }
 
 const viewElement = document.querySelector("arcgis-map");

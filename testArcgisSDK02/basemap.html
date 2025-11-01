@@ -20,6 +20,24 @@
   <body>
     <arcgis-map basemap="arcgis/navigation" center="108.18, 16.06" zoom="13">
       <arcgis-zoom slot="top-left"></arcgis-zoom>
+      <div id="navTools" slot="top-left" style="margin-top: 44px;">
+        <calcite-panel heading="Navigation Tools" scale="s" style="width: 260px;">
+          <div style="padding: 0.5rem; display: grid; gap: 0.5rem;">
+            <calcite-segmented-control id="toolMode" scale="s">
+              <calcite-segmented-control-item value="stop" checked>
+                Add Stop
+              </calcite-segmented-control-item>
+              <calcite-segmented-control-item value="barrier">
+                Line Barrier
+              </calcite-segmented-control-item>
+            </calcite-segmented-control>
+            <div style="display:flex; gap: 0.5rem;">
+              <calcite-button id="solveBtn" scale="s">Solve Route</calcite-button>
+              <calcite-button id="clearBtn" scale="s" appearance="outline">Clear</calcite-button>
+            </div>
+          </div>
+        </calcite-panel>
+      </div>
       <arcgis-directions slot="top-right" use-default-route-layer></arcgis-directions>
       <calcite-panel slot="top-right" heading="Directions">
 
